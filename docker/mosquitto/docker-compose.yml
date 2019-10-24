@@ -1,0 +1,28 @@
+version: '3'
+
+networks:
+  proxy:
+    external: true
+
+services:
+  mqtt:
+    container_name: mqtt
+    image: eclipse-mosquitto
+    restart: always
+    # network_mode: host
+    networks:
+      - proxy
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Los_Angeles
+      - UMASK_SET=022
+    ports:
+      - 1883:1883
+      - 9001:9001  
+    # depends_on: 
+    #   - homeassistant
+    volumes:
+    - /srv/qsh/mosquitto/config:/mosquitto/config
+    - /srv/qsh/mosquitto/log:/mosquitto/log
+    - /srv/qsh/mosquitto/data:/mosquitto/data
