@@ -1,10 +1,16 @@
 version: '3.6'
 
+networks:
+  proxy:
+    external: true
+
 services:
   organizr:
-    container_name: organizr
+    container_name: organizr:latest
     image: organizrtools/organizr-v2
     restart: always
+    networks:
+      - proxy
     environment:
       - PUID=1000
       - PGID=1000
