@@ -7,7 +7,7 @@ networks:
 services:
   portainer:
     container_name: portainer
-    image: portainer/portainer:latest
+    image: portainer/portainer
     command: -H unix:///var/run/docker.sock
     restart: always
     networks:
