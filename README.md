@@ -40,6 +40,8 @@ curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/mast
 
 ### Portainer
 
+* https://portainer.readthedocs.io/en/stable/deployment.html
+
 Create volume
 
 ```bash
@@ -52,6 +54,10 @@ Run portainer
 $> docker run -d -p 9000:9000 --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 ```
 
+```bash
+$> $ docker run -d -p 9000:9000 -p 8000:8000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /path/on/host/data:/data portainer/portainer
+```
+
 ## Syncthing
 
 
@@ -60,7 +66,7 @@ docker create \
   --name=syncthing \
   -e PUID=1000 \
   -e PGID=1000 \
-  -e TZ=Europe/London \
+  -e TZ=America/Los_Angeles \
   -e UMASK_SET=022 \
   -p 8384:8384 \
   -p 22000:22000 \
@@ -79,7 +85,7 @@ docker create \
   --name=heimdall \
   -e PUID=1000 \
   -e PGID=1000 \
-  -e TZ=Europe/London \
+  -e TZ=America/Los_Angeles \
   -p 80:80 \
   -p 443:443 \
   -v /path/to/appdata/config:/config \
