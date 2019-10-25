@@ -18,6 +18,9 @@ services:
       - UMASK_SET=022
       - INFLUXDB_DATA_ENGINE=tsm1
       - INFLUXDB_REPORTING_DISABLED=false
+      # - INFLUX_USER=admin
+      # - INFLUX_PASSWORD=admin
+      # - INFLUX_DB=influx
     ports:
       - "8083:8083"
       - "8086:8086"
@@ -53,8 +56,10 @@ services:
       - TZ=America/Los_Angeles
       - UMASK_SET=022
       - GF_INSTALL_PLUGINS=grafana-clock-panel,briangann-gauge-panel,natel-plotly-panel,grafana-simple-json-datasource
+      # - GF_SECURITY_ADMIN_USER=admin
+      # - GF_SECURITY_ADMIN_PASSWORD=admin
     ports:
-      - "3000:3000"
+      - 3000:3000
     links:
       - influxdb
     volumes:
