@@ -13,7 +13,7 @@ services:
       - proxy
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=1001
       - TZ=America/Los_Angeles
       - UMASK_SET=022
     # hostname: example.com # set to fqdn of host

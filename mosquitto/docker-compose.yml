@@ -14,7 +14,7 @@ services:
       - proxy
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=1001
       - TZ=America/Los_Angeles
       - UMASK_SET=022
     ports:
@@ -23,6 +23,6 @@ services:
     # depends_on: 
     #   - homeassistant
     volumes:
-    - /srv/qsh/mosquitto/config:/mosquitto/config
+    - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
     - /srv/qsh/mosquitto/log:/mosquitto/log
     - /srv/qsh/mosquitto/data:/mosquitto/data
