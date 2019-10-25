@@ -1,0 +1,63 @@
+version: '3'
+
+networks:
+  proxy:
+    external: true
+
+services:
+  influxdb:
+    container_name: influxdb
+    image: influxdb
+    restart: always
+    networks:
+      - proxy
+    environment:
+      - PUID=1000
+      - PGID=1001
+      - TZ=America/Los_Angeles
+      - UMASK_SET=022
+      - INFLUXDB_DATA_ENGINE=tsm1
+      - INFLUXDB_REPORTING_DISABLED=false
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+      - "8090:8090"
+    env_file:
+      - 'env.influxdb'
+    volumes:
+      - /srv/qsh/influxdb:/var/lib/influxdb
+
+  telegraf:
+    container_name: telegraf
+    image: telegraf
+    restart: always
+    networks:
+      - proxy
+    environment:
+      - PUID=1000
+      - PGID=1001
+      - TZ=America/Los_Angeles
+      - UMASK_SET=022
+    links:
+      - influxdb
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    restart: always
+    networks:
+      - proxy
+    environment:
+      - PUID=1000
+      - PGID=1001
+      - TZ=America/Los_Angeles
+      - UMASK_SET=022
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,briangann-gauge-panel,natel-plotly-panel,grafana-simple-json-datasource
+    ports:
+      - "3000:3000"
+    links:
+      - influxdb
+    volumes:
+      - /srv/qsh/grafana:/var/lib/grafana
