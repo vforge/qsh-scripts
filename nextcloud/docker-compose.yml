@@ -1,0 +1,23 @@
+version: '3'
+
+networks:
+  proxy:
+    external: true
+
+services:
+  nextcloud:
+    container_name: nextcloud
+    image: linuxserver/nextcloud
+    restart: always
+    networks:
+      - proxy
+    environment:
+      - PUID=1000
+      - PGID=1001
+      - TZ=America/Los_Angeles
+      - UMASK_SET=022
+    ports:
+      - 443:443
+    volumes:
+      - /srv/qsh/nextcloud/config:/config
+      - /storage/nextcloud:/data

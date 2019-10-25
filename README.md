@@ -135,3 +135,4 @@ $> systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.targ
 ## Links
 
 * https://community.home-assistant.io/t/absolute-beginners-guide-to-installing-ha-on-intel-nuc-using-docker/98412
+* https://community.home-assistant.io/t/solved-docker-mqtt-mosquitto-setup-what-am-i-missing/87381
