@@ -17,6 +17,7 @@ services:
       - TZ=America/Los_Angeles
       - UMASK_SET=022
     ports:
+      - 8888:80
       - 443:443
     volumes:
       - /srv/qsh/nextcloud/config:/config
