@@ -2,27 +2,6 @@
 
 My personal collection of scripts and doodles used in my home server. Mostly READMEs and scripts. Expect nothing.
 
-## Installing docker
-
-```bash
-$> sudo apt-get update
-$> sudo apt-get install \
-     apt-transport-https \
-     ca-certificates \
-     curl \
-     gnupg-agent \
-     software-properties-common
-$> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-$> sudo add-apt-repository \
-     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-     $(lsb_release -cs) \
-     stable"
-$> sudo apt-get update
-$> sudo apt-get install docker-ce docker-ce-cli containerd.io
-```
-
-## Docker images
-
 ### Hass.io
 
 ```bash
@@ -136,3 +115,4 @@ $> systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.targ
 
 * https://community.home-assistant.io/t/absolute-beginners-guide-to-installing-ha-on-intel-nuc-using-docker/98412
 * https://community.home-assistant.io/t/solved-docker-mqtt-mosquitto-setup-what-am-i-missing/87381
+* https://lubuntu1510blog.wordpress.com/2016/11/29/how-to-automount-an-external-usb-hard-drive-via-terminal/

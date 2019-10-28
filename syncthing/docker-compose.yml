@@ -1,0 +1,25 @@
+version: '3'
+
+networks:
+  proxy:
+    external: true
+
+services:
+  portainer:
+    container_name: syncthing
+    image: linuxserver/syncthing
+    restart: always
+    networks:
+      - proxy
+    environment:
+      - PUID=1000
+      - PGID=1001
+      - TZ=America/Los_Angeles
+      - UMASK_SET=022
+    ports:
+      - 8384:8384
+      - 22000:22000
+      - 21027:21027/udp
+    volumes:
+      - /srv/qsh/syncthing/config:/config
+      - /usr/share/hassio:/hassio
