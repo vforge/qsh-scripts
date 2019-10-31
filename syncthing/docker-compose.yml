@@ -23,3 +23,4 @@ services:
     volumes:
       - /srv/qsh/syncthing/config:/config
       - /usr/share/hassio:/hassio
+      - /storage:/storage

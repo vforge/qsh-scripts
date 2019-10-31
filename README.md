@@ -111,8 +111,17 @@ $> sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 $> systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
 
+
+
+## MISC
+
+```cron
+*/5 * * * * /bin/touch /dev/sdb &>/dev/null
+```
+
 ## Links
 
 * https://community.home-assistant.io/t/absolute-beginners-guide-to-installing-ha-on-intel-nuc-using-docker/98412
 * https://community.home-assistant.io/t/solved-docker-mqtt-mosquitto-setup-what-am-i-missing/87381
 * https://lubuntu1510blog.wordpress.com/2016/11/29/how-to-automount-an-external-usb-hard-drive-via-terminal/
+* https://askubuntu.com/questions/113733/how-do-i-correctly-mount-a-ntfs-partition-in-etc-fstab
