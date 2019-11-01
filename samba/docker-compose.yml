@@ -28,4 +28,4 @@ services:
     tty: true
     volumes:
       - /storage:/storage:z
-    command: '-s "Storage;/storage;yes;yes;yes"'
+    command: '-s "Storage;/storage;yes;no;yes"'
