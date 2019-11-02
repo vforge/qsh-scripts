@@ -1,0 +1,32 @@
+version: '3'
+
+networks:
+  proxy:
+    external: true
+
+services:
+  plex:
+    container_name: plex
+    image: linuxserver/plex
+    restart: always
+    networks:
+      - proxy
+    environment:
+      - PUID=1002
+      - PGID=998
+      - TZ=America/Los_Angeles
+      - UMASK_SET=022
+      - VERSION=docker
+    ports:
+      - 32400:32400
+      - 32400:32400/udp
+      - 32469:32469
+      - 32469:32469/udp
+      - 5353:5353/udp
+      - 1900:1900/udp
+    volumes:
+      - /srv/qsh/plex/config:/config
+      - /storage/Movies:/movies:z
+      - /storage/TV:/tv:z
+      - /storage/Porn:/port:z
+      # - /path for transcoding:/transcode
