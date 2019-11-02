@@ -1,0 +1,24 @@
+version: '3'
+
+networks:
+  proxy:
+    external: true
+
+services:
+  radarr:
+    container_name: radarr
+    image: linuxserver/radarr
+    restart: always
+    networks:
+      - proxy
+    environment:
+      - PUID=1002
+      - PGID=998
+      - TZ=America/Los_Angeles
+      - UMASK_SET=022
+    ports:
+      - 7878:7878
+    volumes:
+      - /srv/qsh/radarr/config:/config
+      - /storage/__Unsorted__:/downloads:z
+      - /storage/Movies:/movies
