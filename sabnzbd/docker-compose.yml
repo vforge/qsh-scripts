@@ -1,0 +1,25 @@
+version: '3'
+
+networks:
+  proxy:
+    external: true
+
+services:
+  sabnzbd:
+    container_name: sabnzbd
+    image: portainer/sabnzbd
+    restart: always
+    networks:
+      - proxy
+    environment:
+      - PUID=1003
+      - PGID=998
+      - TZ=America/Los_Angeles
+      - UMASK_SET=022
+    ports:
+      - 8080:8080
+      - 9090:9090
+    volumes:
+      - /srv/qsh/sabnzbd/config:/config
+      - /storage/__Unsorted__:/downloads
+      - /storage/__Incomplete.sabnzbd__:/incomplete-downloads
