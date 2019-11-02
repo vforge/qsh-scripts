@@ -12,8 +12,8 @@ services:
     networks:
       - proxy
     environment:
-      - PUID=1000
-      - PGID=1001
+      - PUID="${UID}"
+      - PGID="${GID}"
       - TZ=America/Los_Angeles
       - UMASK_SET=022
     ports:

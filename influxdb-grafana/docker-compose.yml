@@ -12,8 +12,8 @@ services:
     networks:
       - proxy
     environment:
-      - PUID=1000
-      - PGID=1001
+      - PUID="${UID}"
+      - PGID="${GID}"
       - TZ=America/Los_Angeles
       - UMASK_SET=022
       - INFLUXDB_DATA_ENGINE=tsm1
@@ -35,8 +35,8 @@ services:
     networks:
       - proxy
     environment:
-      - PUID=1000
-      - PGID=1001
+      - PUID="${UID}"
+      - PGID="${GID}"
       - TZ=America/Los_Angeles
       - UMASK_SET=022
     links:
@@ -51,8 +51,8 @@ services:
     networks:
       - proxy
     environment:
-      - PUID=1000
-      - PGID=1001
+      - PUID="${UID}"
+      - PGID="${GID}"
       - TZ=America/Los_Angeles
       - UMASK_SET=022
       - GF_INSTALL_PLUGINS=grafana-clock-panel,briangann-gauge-panel,natel-plotly-panel,grafana-simple-json-datasource

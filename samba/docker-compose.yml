@@ -11,8 +11,8 @@ services:
     image: dperson/samba
     restart: always
     environment:
-      - USERID=1001
-      - GROUPID=1000
+      - USERID="${SAMBAUID}"
+      - GROUPID="${SAMBAGID}"
       - TZ=America/Los_Angeles
     networks:
       - proxy
