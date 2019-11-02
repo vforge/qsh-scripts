@@ -119,9 +119,15 @@ $> systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.targ
 */5 * * * * /bin/touch /dev/sdb &>/dev/null
 ```
 
+```bash
+$> sudo useradd -G docker,sambashare -M -s /sbin/nologin sambauser
+```
+
 ## Links
 
 * https://community.home-assistant.io/t/absolute-beginners-guide-to-installing-ha-on-intel-nuc-using-docker/98412
 * https://community.home-assistant.io/t/solved-docker-mqtt-mosquitto-setup-what-am-i-missing/87381
 * https://lubuntu1510blog.wordpress.com/2016/11/29/how-to-automount-an-external-usb-hard-drive-via-terminal/
 * https://askubuntu.com/questions/113733/how-do-i-correctly-mount-a-ntfs-partition-in-etc-fstab
+* https://www.tecmint.com/add-users-in-linux/
+* https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.sec.doc/q011110_.htm

@@ -10,10 +10,9 @@ services:
     image: dperson/samba
     restart: always
     environment:
-      - PUID=1000
-      - PGID=1001
+      - USERID=1001 # sambauser
+      - GROUPID=1000 #sambashare
       - TZ=America/Los_Angeles
-      - UMASK_SET=022
     networks:
       - default
     ports:
