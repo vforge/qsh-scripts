@@ -7,7 +7,7 @@ networks:
 services:
   sabnzbd:
     container_name: sabnzbd
-    image: portainer/sabnzbd
+    image: linuxserver/sabnzbd
     restart: always
     networks:
       - proxy
