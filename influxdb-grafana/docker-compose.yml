@@ -12,7 +12,7 @@ services:
     networks:
       - proxy
     environment:
-      - PUID=1003
+      - PUID=1002
       - PGID=998
       - TZ=America/Los_Angeles
       - UMASK_SET=022
@@ -35,7 +35,7 @@ services:
     networks:
       - proxy
     environment:
-      - PUID=1003
+      - PUID=1002
       - PGID=998
       - TZ=America/Los_Angeles
       - UMASK_SET=022
@@ -51,7 +51,7 @@ services:
     networks:
       - proxy
     environment:
-      - PUID=1003
+      - PUID=1002
       - PGID=998
       - TZ=America/Los_Angeles
       - UMASK_SET=022
