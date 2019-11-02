@@ -5,9 +5,9 @@ networks:
     external: true
 
 services:
-  sabnzbd:
-    container_name: sabnzbd
-    image: linuxserver/sabnzbd
+  sonarr:
+    container_name: sonarr
+    image: linuxserver/sonarr
     restart: always
     networks:
       - proxy
@@ -17,9 +17,8 @@ services:
       - TZ=America/Los_Angeles
       - UMASK_SET=022
     ports:
-      - 8080:8080
-      - 9090:9090
+      - 8989:8989
     volumes:
-      - /srv/qsh/sabnzbd/config:/config
+      - /srv/qsh/sonarr/config:/config
       - /storage/__Unsorted__:/downloads:z
-      - /storage/__Incomplete.sabnzbd__:/incomplete-downloads
+      - /storage/TV:/tv
