@@ -13,8 +13,8 @@ services:
     networks:
       - proxy
     environment:
-      - PUID="${UID}"
-      - PGID="${GID}"
+      - PUID="${DOCKERUID}"
+      - PGID="${DOCKERGID}"
       - TZ=America/Los_Angeles
       - UMASK_SET=022
     ports:
