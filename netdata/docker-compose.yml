@@ -12,8 +12,8 @@ services:
     networks:
       - proxy
     environment:
-      - PUID="${DOCKERUID}"
-      - PGID="${DOCKERGID}"
+      - PUID=1003
+      - PGID=998
       - TZ=America/Los_Angeles
       - UMASK_SET=022
     # hostname: example.com # set to fqdn of host
