@@ -2,7 +2,7 @@
 
 My personal collection of scripts and doodles used in my home server. Mostly READMEs and scripts. Expect nothing.
 
-### Hass.io
+## Hass.io
 
 ```bash
 sudo -i
@@ -15,46 +15,6 @@ curl -fsSL get.docker.com | sh
 
 ```bash
 curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/master/hassio_install.sh" | bash -s -- -m intel-nuc
-```
-
-### Portainer
-
-* https://portainer.readthedocs.io/en/stable/deployment.html
-
-Create volume
-
-```bash
-$> sudo docker volume create portainer_data
-```
-
-Run portainer
-
-```bash
-$> docker run -d -p 9000:9000 --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
-```
-
-```bash
-$> $ docker run -d -p 9000:9000 -p 8000:8000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /path/on/host/data:/data portainer/portainer
-```
-
-## Syncthing
-
-
-```bash
-docker create \
-  --name=syncthing \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=America/Los_Angeles \
-  -e UMASK_SET=022 \
-  -p 8384:8384 \
-  -p 22000:22000 \
-  -p 21027:21027/udp \
-  -v /path/to/appdata/config:/config \
-  -v /path/to/data1:/data1 \
-  -v /path/to/data2:/data2 \
-  --restart unless-stopped \
-  linuxserver/syncthing
 ```
 
 ## heimdall
@@ -70,17 +30,15 @@ docker create \
   -v /path/to/appdata/config:/config \
   --restart unless-stopped \
   linuxserver/heimdall
-``` 
+```
 
-## Services
-
-### List services
+## List services
 
 ```bash
 $> systemctl list-units --type service --state running
 ```
 
-### Remove service
+## Remove service
 
 ```bash
 $> systemctl stop [servicename]
@@ -111,8 +69,6 @@ $> sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 $> systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
 
-
-
 ## MISC
 
 ```cron
@@ -121,13 +77,16 @@ $> systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.targ
 
 ```bash
 $> sudo useradd -G docker,sambashare -M -s /sbin/nologin sambauser
+$> docker volume prune
 ```
 
 ## Links
 
-* https://community.home-assistant.io/t/absolute-beginners-guide-to-installing-ha-on-intel-nuc-using-docker/98412
-* https://community.home-assistant.io/t/solved-docker-mqtt-mosquitto-setup-what-am-i-missing/87381
-* https://lubuntu1510blog.wordpress.com/2016/11/29/how-to-automount-an-external-usb-hard-drive-via-terminal/
-* https://askubuntu.com/questions/113733/how-do-i-correctly-mount-a-ntfs-partition-in-etc-fstab
-* https://www.tecmint.com/add-users-in-linux/
-* https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.sec.doc/q011110_.htm
+* <https://portainer.readthedocs.io/en/stable/deployment.html>
+* <https://community.home-assistant.io/t/absolute-beginners-guide-to-installing-ha-on-intel-nuc-using-docker/98412>
+* <https://community.home-assistant.io/t/solved-docker-mqtt-mosquitto-setup-what-am-i-missing/87381>
+* <https://lubuntu1510blog.wordpress.com/2016/11/29/how-to-automount-an-external-usb-hard-drive-via-terminal/>
+* <https://askubuntu.com/questions/113733/how-do-i-correctly-mount-a-ntfs-partition-in-etc-fstab>
+* <https://www.tecmint.com/add-users-in-linux/>
+* <https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.sec.doc/q011110_.htm>
+* <https://linuxize.com/post/how-to-remove-docker-images-containers-volumes-and-networks/>
