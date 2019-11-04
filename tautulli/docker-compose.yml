@@ -1,0 +1,24 @@
+version: '3'
+
+networks:
+  proxy:
+    external: true
+
+services:
+  tautulli:
+    container_name: tautulli
+    image: linuxserver/tautulli
+    restart: always
+    network_mode: host
+    networks:
+      - proxy
+    environment:
+      - PUID=1002
+      - PGID=998
+      - TZ=America/Los_Angeles
+      - UMASK_SET=022
+    ports:
+      - 8181:8181
+    volumes:
+      - /srv/qsh/tautulli/config:/config
+      - /srv/qsh/plex/config/Library/Application Support/Plex Media Server/Logs:/logs:ro
