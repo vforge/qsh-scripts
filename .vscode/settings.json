@@ -1,6 +1,32 @@
 {
   "cSpell.words": [
+    "GROUPID",
+    "INFLUXDB",
+    "PGID",
+    "PUID",
+    "UMASK",
+    "USERID",
+    "bazarr",
+    "dperson",
+    "grafana",
+    "hassio",
+    "homeassistant",
     "linuxserver",
-    "syncthing"
+    "mosquitto",
+    "mqtt",
+    "netdata",
+    "nextcloud",
+    "organizr",
+    "organizrtools",
+    "passwd",
+    "plex",
+    "portainer",
+    "radarr",
+    "sabnzbd",
+    "sonarr",
+    "syncthing",
+    "tautulli",
+    "telegraf",
+    "tmpfs"
   ]
 }
