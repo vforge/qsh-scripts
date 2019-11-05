@@ -21,4 +21,5 @@ services:
     volumes:
       - /srv/qsh/couchpotato/config:/config
       - /storage/__Unsorted__:/downloads:z
+      - /storage/__Incomplete.couchpotato__:/incomplete:z
       - /storage/Movies:/movies:z
