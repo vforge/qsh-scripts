@@ -2,6 +2,8 @@
 
 My personal collection of scripts and doodles used in my home server. Mostly READMEs and scripts. Expect nothing.
 
+* <https://github.com/davestephens/ansible-nas>
+
 ## Hass.io
 
 ```bash
@@ -79,6 +81,15 @@ $> systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.targ
 $> sudo useradd -G docker,sambashare -M -s /sbin/nologin sambauser
 $> docker volume prune
 ```
+
+### TODO
+
+* <https://hub.docker.com/r/linuxserver/lychee/>
+* <https://docs.filerun.com/docker>
+* <https://hub.docker.com/r/coderaiser/cloudcmd/>
+* <https://github.com/kylemanna/docker-openvpn/blob/master/docs/docker-compose.md>
+* <https://github.com/kylemanna/docker-openvpn>
+* <https://blog.ssdnodes.com/blog/installing-nextcloud-docker/>
 
 ## Links
 
