@@ -8,7 +8,7 @@ services:
   heimdall:
     container_name: heimdall
     image: linuxserver/heimdall
-    restart: always
+    restart: unless-stopped
     networks:
       - proxy
     environment:

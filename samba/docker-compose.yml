@@ -9,7 +9,7 @@ services:
   samba:
     container_name: samba
     image: dperson/samba
-    restart: always
+    restart: unless-stopped
     environment:
       - USERID=1002
       - GROUPID=998

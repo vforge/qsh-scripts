@@ -8,7 +8,7 @@ services:
   influxdb:
     container_name: influxdb
     image: influxdb
-    restart: always
+    restart: unless-stopped
     networks:
       - proxy
     environment:
@@ -31,7 +31,7 @@ services:
   telegraf:
     container_name: telegraf
     image: telegraf
-    restart: always
+    restart: unless-stopped
     networks:
       - proxy
     environment:
@@ -47,7 +47,7 @@ services:
   grafana:
     container_name: grafana
     image: grafana/grafana
-    restart: always
+    restart: unless-stopped
     networks:
       - proxy
     environment:
