@@ -1,0 +1,23 @@
+defaultEntryPoints = ["http", "https"]
+
+[web]
+address = ":8080"
+  [web.auth.basic]
+  users = ["traefik:$apr1$Yumtc82D$ozZX6TKHw..5q28YIGgDD."]
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect]
+      entryPoint = "https"
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
+
+[acme]
+email = "vforge@users.noreply.github.com"
+storage = "acme.json"
+entryPoint = "https"
+onHostRule = true
+onDemand = false
+
