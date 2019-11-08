@@ -2,8 +2,8 @@ defaultEntryPoints = ["http", "https"]
 
 [web]
 address = ":8080"
-  [web.auth.basic]
-  users = ["traefik:$apr1$Yumtc82D$ozZX6TKHw..5q28YIGgDD."]
+  # [web.auth.basic]
+  # users = ["traefik:$apr1$Yumtc82D$ozZX6TKHw..5q28YIGgDD."]
 
 [entryPoints]
   [entryPoints.http]

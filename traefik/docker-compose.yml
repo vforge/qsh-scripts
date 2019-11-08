@@ -7,27 +7,29 @@ networks:
     external: false
 
 services:
-  portainer:
-    container_name: portainer
-    image: portainer/portainer
-    command: -H unix:///var/run/docker.sock
+  traefik:
+    container_name: traefik
+    image: traefik
     restart: unless-stopped
     networks:
       - proxy
       - external
+    # command: --web --docker --docker.domain=home.qsh.io --logLevel=DEBUG
+    command: --api.insecure=true --providers.docker
     labels:
       - traefik.backend=portainer
-      - traefik.frontend.rule=Host:portainer.home.qsh.ai
+      - traefik.frontend.rule=Host:monitor.home.qsh.ai
       - traefik.docker.network=proxy
-      - traefik.port=80
+      - traefik.port=8080
     environment:
       - PUID=1002
       - PGID=998
       - TZ=America/Los_Angeles
       - UMASK_SET=022
     ports:
-      - 9000:9000
-      - 8000:8000
+      - 80:80
+      - 443:443
+      - 8080:8080
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /srv/qsh/portainer/data:/data
+      - ./traefik.toml:/traefik.toml
