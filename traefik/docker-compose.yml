@@ -7,13 +7,14 @@ networks:
 #     external: false
 
 services:
-  # whoami:
-  #   # A container that exposes an API to show its IP address
-  #   container_name: whoami
-  #   image: containous/whoami
-  #   labels:
-  #     - traefik.enable=true
-  #     - "traefik.http.routers.whoami.rule=Host(`whoami.home.qsh.ai`)"
+  whoami:
+    # A container that exposes an API to show its IP address
+    container_name: whoami
+    image: containous/whoami
+    networks:
+      - proxy
+    labels:
+      - "traefik.http.routers.whoami.rule=Host(`whoami.home.qsh.ai`)"
 
   traefik:
     container_name: traefik
@@ -29,12 +30,12 @@ services:
       - --providers.docker
       # - --api.dashboard=true
       - --api.insecure=true # Don't do that in production
-    # labels:
+    labels:
     #   - "traefik.http.routers.traefik.rule=Host(`monitor.home.qsh.ai`)"
-      # - traefik.frontend.rule=Host:monitor.home.qsh.ai
+      - traefik.frontend.rule=Host:monitor.home.qsh.ai
       # - traefik.docker.network=proxy
       # - traefik.port=8080
-      # - traefik.enable=true
+      - traefik.enable=true
     environment:
       - PUID=1002
       - PGID=998
