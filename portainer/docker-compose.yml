@@ -12,7 +12,6 @@ services:
     image: portainer/portainer
     command: -H unix:///var/run/docker.sock
     restart: unless-stopped
-    memory: 1g
     # networks:
     #   - proxy
     #   - internal
