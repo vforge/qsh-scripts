@@ -27,7 +27,7 @@ services:
     labels:
       - traefik.backend=traefik
       - traefik.frontend.rule=Host:monitor.home.qsh.ai
-      - traefik.docker.network=proxy
+      # - traefik.docker.network=proxy
       - traefik.port=8080
     environment:
       - PUID=1002
