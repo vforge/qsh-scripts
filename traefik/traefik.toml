@@ -12,6 +12,7 @@
 [global]
   checkNewVersion = true
   sendAnonymousUsage = false
+  debug = true
 
 ################################################################
 # Entrypoints configuration
@@ -71,7 +72,7 @@
 #
 # Optional
 #
-# [accessLog]
+[accessLog]
 
   # Sets the file path for the access log. If not specified, stdout will be used.
   # Intermediate directories are created if necessary.
