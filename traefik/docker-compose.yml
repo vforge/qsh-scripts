@@ -27,9 +27,10 @@ services:
     command:
       - --entrypoints.web.address=:80
       - --providers.docker
+      - --api.dashboard=true
       - --api.insecure # Don't do that in production
-    # labels:
-      # - traefik.backend=traefik
+    labels:
+      - "traefik.http.routers.traefik.rule=Host(`monitor.home.qsh.ai`)"
       # - traefik.frontend.rule=Host:monitor.home.qsh.ai
       # - traefik.docker.network=proxy
       # - traefik.port=8080
