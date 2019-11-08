@@ -25,15 +25,15 @@ services:
     #   - internal
     # command: --web --docker --docker.domain=home.qsh.io --logLevel=DEBUG
     command:
-      - --entrypoints.web.address=:8080
+      - --entrypoints.web.address=:80
       - --providers.docker
       - --api.insecure # Don't do that in production
-    labels:
-      - traefik.backend=traefik
-      - traefik.frontend.rule=Host:monitor.home.qsh.ai
+    # labels:
+      # - traefik.backend=traefik
+      # - traefik.frontend.rule=Host:monitor.home.qsh.ai
       # - traefik.docker.network=proxy
-      - traefik.port=8080
-      - traefik.enable=true
+      # - traefik.port=8080
+      # - traefik.enable=true
     environment:
       - PUID=1002
       - PGID=998
