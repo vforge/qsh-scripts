@@ -7,13 +7,13 @@ version: '3'
 #     external: false
 
 services:
-  whoami:
-    # A container that exposes an API to show its IP address
-    container_name: whoami
-    image: containous/whoami
-    labels:
-      - traefik.enable=true
-      - "traefik.http.routers.whoami.rule=Host(`whoami.home.qsh.ai`)"
+  # whoami:
+  #   # A container that exposes an API to show its IP address
+  #   container_name: whoami
+  #   image: containous/whoami
+  #   labels:
+  #     - traefik.enable=true
+  #     - "traefik.http.routers.whoami.rule=Host(`whoami.home.qsh.ai`)"
 
   traefik:
     container_name: traefik
@@ -25,12 +25,12 @@ services:
     #   - internal
     # command: --web --docker --docker.domain=home.qsh.io --logLevel=DEBUG
     command:
-      - --entrypoints.web.address=:80
+      # - --entrypoints.web.address=:80
       - --providers.docker
       - --api.dashboard=true
-      - --api.insecure # Don't do that in production
-    labels:
-      - "traefik.http.routers.traefik.rule=Host(`monitor.home.qsh.ai`)"
+      - --api.insecure=true # Don't do that in production
+    # labels:
+    #   - "traefik.http.routers.traefik.rule=Host(`monitor.home.qsh.ai`)"
       # - traefik.frontend.rule=Host:monitor.home.qsh.ai
       # - traefik.docker.network=proxy
       # - traefik.port=8080
@@ -42,7 +42,7 @@ services:
       - UMASK_SET=022
     ports:
       - 80:80
-      - 443:443
+      # - 443:443
       - 8080:8080
     volumes:
       - ./traefik.toml:/etc/traefik/traefik.toml:ro
