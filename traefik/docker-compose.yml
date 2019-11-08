@@ -24,7 +24,7 @@ services:
     #   - internal
     # command: --web --docker --docker.domain=home.qsh.io --logLevel=DEBUG
     command:
-      - --entrypoints.web.address=:80
+      - --entrypoints.web.address=:8080
       - --providers.docker
       - --api.insecure # Don't do that in production
     labels:
