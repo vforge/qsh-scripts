@@ -30,12 +30,12 @@ services:
       - --providers.docker
       # - --api.dashboard=true
       - --api.insecure=true # Don't do that in production
-    labels:
+    # labels:
     #   - "traefik.http.routers.traefik.rule=Host(`monitor.home.qsh.ai`)"
-      - traefik.frontend.rule=Host:monitor.home.qsh.ai
+      # - traefik.frontend.rule=Host:monitor.home.qsh.ai
       # - traefik.docker.network=proxy
       # - traefik.port=8080
-      - traefik.enable=true
+      # - traefik.enable=true
     environment:
       - PUID=1002
       - PGID=998
