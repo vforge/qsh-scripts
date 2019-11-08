@@ -12,7 +12,7 @@ services:
     container_name: whoami
     image: containous/whoami
     labels:
-      - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
+      - "traefik.http.routers.whoami.rule=Host(`whoami.home.qsh.ai`)"
 
   traefik:
     container_name: traefik
@@ -23,7 +23,10 @@ services:
     #   - proxy
     #   - internal
     # command: --web --docker --docker.domain=home.qsh.io --logLevel=DEBUG
-    command: --api.insecure=true --providers.docker
+    command:
+      - --entrypoints.web.address=:80
+      - --providers.docker
+      - --api.insecure # Don't do that in production
     labels:
       - traefik.backend=traefik
       - traefik.frontend.rule=Host:monitor.home.qsh.ai
