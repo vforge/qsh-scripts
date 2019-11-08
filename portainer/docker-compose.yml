@@ -16,11 +16,9 @@ services:
       - proxy
     #   - internal
     labels:
-      - traefik.backend=portainer
-      - traefik.frontend.rule=Host:portainer.home.qsh.ai
-      - traefik.docker.network=proxy
-      - traefik.port=80
-      - traefik.enable=true
+      - "traefik.enable=true"
+      - "traefik.http.routers.portainer.rule=Host(`portainer.home.qsh.ai`)"
+      - "traefik.http.routers.portainer.entrypoints=web"
     environment:
       - PUID=1002
       - PGID=998
