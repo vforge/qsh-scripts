@@ -15,6 +15,8 @@ services:
       - PGID=998
       - TZ=America/Los_Angeles
       - UMASK_SET=022
+      # if you want pretty colors in your docker logs:
+      - FORCE_COLOR=1
     ports:
       - 80:80
       - 81:81
@@ -25,9 +27,6 @@ services:
       - /srv/qsh/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
     depends_on:
       - db
-    environment:
-    # if you want pretty colors in your docker logs:
-    - FORCE_COLOR=1
 
   db:
     image: mariadb:latest
