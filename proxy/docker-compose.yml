@@ -6,6 +6,7 @@ networks:
 
 services:
   app:
+    container_name: proxy_app
     image: jc21/nginx-proxy-manager:latest
     restart: always
     networks:
@@ -29,6 +30,7 @@ services:
       - db
 
   db:
+    container_name: proxy_db
     image: mariadb:latest
     restart: always
     networks:
