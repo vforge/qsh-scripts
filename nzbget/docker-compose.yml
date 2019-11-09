@@ -20,5 +20,11 @@ services:
       - 6789:6789
     volumes:
       - /srv/qsh/nzbget/config:/config
-      - /storage/__Unsorted__:/downloads:z
-      - /storage/_Incomplete.nzbget:/incomplete:z
+      #destdir main/completed
+      - /storage/__Unsorted__:/completed:z
+      #maindir /downloads
+      - /storage/.nzbget:/nzbget:z
+      #interdir main/intermediate
+      #nzbdir main/nzb
+      #queue main/queue
+      #temp main/tmp
