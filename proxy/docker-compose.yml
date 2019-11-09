@@ -8,6 +8,8 @@ services:
   app:
     image: jc21/nginx-proxy-manager:latest
     restart: always
+    networks:
+      - proxy
     environment:
       - PUID=1002
       - PGID=998
