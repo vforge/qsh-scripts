@@ -17,7 +17,8 @@ services:
       - TZ=America/Los_Angeles
       - UMASK_SET=022
     ports:
-      - 80:80
-      - 443:443
+      # move ports by +10 because proxy uses that ports
+      - 90:80
+      - 453:443
     volumes:
       - /srv/qsh/heimdall/config:/config
