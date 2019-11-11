@@ -21,7 +21,7 @@ services:
     volumes:
       - /srv/qsh/nzbget/config:/config
       #destdir main/completed
-      - /storage/__Unsorted__:/downloads:z
+      - /storage/__Unsorted__:/completed:z
       #maindir /downloads
       - /storage/.nzbget:/nzbget:z
       #interdir main/intermediate

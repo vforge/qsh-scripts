@@ -21,4 +21,5 @@ services:
     volumes:
       - /srv/qsh/radarr/config:/config
       - /storage/__Unsorted__:/downloads:z
+      - /storage/__Unsorted__:/completed:z
       - /storage/Movies:/movies:z

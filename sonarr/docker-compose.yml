@@ -21,4 +21,5 @@ services:
     volumes:
       - /srv/qsh/sonarr/config:/config
       - /storage/__Unsorted__:/downloads:z
+      - /storage/__Unsorted__:/completed:z
       - /storage/TV:/tv:z
