@@ -24,4 +24,5 @@ services:
       - /storage/__Unsorted__:/downloads:z
       - /storage/Movies:/movies:z
       - /storage/TV:/tv:z
+      - /storage/Anime:/anime:z
       # - /path for transcoding:/transcode #optional
