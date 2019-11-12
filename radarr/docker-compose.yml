@@ -23,3 +23,4 @@ services:
       - /storage/__Unsorted__:/downloads:z
       - /storage/__Unsorted__:/completed:z
       - /storage/Movies:/movies:z
+      - /storage/Anime:/anime:z

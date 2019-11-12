@@ -22,3 +22,4 @@ services:
       - /srv/qsh/bazarr/config:/config
       - /storage/Movies:/movies:z
       - /storage/TV:/tv:z
+      - /storage/Anime:/anime:z

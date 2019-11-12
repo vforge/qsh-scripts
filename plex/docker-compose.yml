@@ -28,5 +28,6 @@ services:
     volumes:
       - /srv/qsh/plex/config:/config
       - /storage/Movies:/movies:z
+      - /storage/Anime:/anime:z
       - /storage/TV:/tv:z
       # - /path for transcoding:/transcode
