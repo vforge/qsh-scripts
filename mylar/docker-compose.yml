@@ -17,7 +17,7 @@ services:
       - TZ=America/Los_Angeles
       - UMASK_SET=022
     ports:
-      - 8090:8090
+      - 8091:8090
     volumes:
       - /srv/qsh/mylar/config:/config
       - /storage/__Unsorted__:/downloads:z
