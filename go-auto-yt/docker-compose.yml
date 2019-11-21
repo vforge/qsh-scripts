@@ -7,7 +7,7 @@ networks:
 services:
   go-auto-yt:
     container_name: go-auto-yt
-    image: xiovv/go-auto-yt:stable
+    image: xiovv/go-auto-yt
     restart: unless-stopped
     networks:
       - proxy
