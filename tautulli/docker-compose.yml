@@ -9,6 +9,10 @@ services:
     container_name: tautulli
     image: linuxserver/tautulli
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: .25
     networks:
       - proxy
     environment:

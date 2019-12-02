@@ -9,6 +9,10 @@ services:
     container_name: syncthing
     image: linuxserver/syncthing
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: 1
     networks:
       - proxy
     environment:
