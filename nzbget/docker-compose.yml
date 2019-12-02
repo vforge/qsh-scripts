@@ -9,10 +9,10 @@ services:
     container_name: nzbget
     image: linuxserver/nzbget
     restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          cpus: '1.00'
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '1.00'
     networks:
       - proxy
     environment:

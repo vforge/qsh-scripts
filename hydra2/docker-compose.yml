@@ -5,9 +5,9 @@ networks:
     external: true
 
 services:
-  portainer:
-    container_name: syncthing
-    image: linuxserver/syncthing
+  hydra2:
+    container_name: hydra2
+    image: linuxserver/hydra2
     restart: unless-stopped
     # deploy:
     #   resources:
@@ -21,10 +21,7 @@ services:
       - TZ=America/Los_Angeles
       - UMASK_SET=022
     ports:
-      - 8384:8384
-      - 22000:22000
-      - 21027:21027/udp
+      - 5076:5076
     volumes:
-      - /srv/qsh/syncthing/config:/config
-      - /usr/share/hassio:/hassio
-      - /storage:/storage:z
+      - /srv/qsh/hydra2/config:/config
+      - /storage/.nzbfiles:/downloads:z
