@@ -12,7 +12,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: .25
+          cpus: '0.25'
     networks:
       - proxy
     environment:
