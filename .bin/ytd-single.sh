@@ -27,3 +27,5 @@ youtube-dl \
   --merge-output-format "mkv" \
   # --dateafter 20190101 \
   # --batch-file "ytd.txt"
+
+chown dockeruser:docker -R .
