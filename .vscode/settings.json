@@ -9,6 +9,7 @@
     "bazarr",
     "cloudcmd",
     "couchpotato",
+    "cpus",
     "dperson",
     "grafana",
     "hassio",
@@ -18,6 +19,7 @@
     "mqtt",
     "netdata",
     "nextcloud",
+    "nzbget",
     "organizr",
     "organizrtools",
     "passwd",
@@ -29,6 +31,7 @@
     "syncthing",
     "tautulli",
     "telegraf",
-    "tmpfs"
+    "tmpfs",
+    "trilium"
   ]
 }
