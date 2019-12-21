@@ -82,6 +82,10 @@ $> sudo useradd -G docker,sambashare -M -s /sbin/nologin sambauser
 $> docker volume prune
 ```
 
+```bash
+$> sudo mount -t nfs -o nfsvers=3 192.168.29.100:/volume1/Vault /vault -vvvv
+```
+
 ### TODO
 
 * <https://hub.docker.com/r/linuxserver/lychee/>

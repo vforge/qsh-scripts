@@ -6,8 +6,6 @@ networks:
 
 services:
   trilium:
-    build:
-      context: .
     container_name: trilium
     image: zadam/trilium
     restart: unless-stopped
