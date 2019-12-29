@@ -25,6 +25,6 @@ services:
       - 8443:8443
       - 8843:8843
       - 8880:8880
-      - 6789:6789
+      # - 6789:6789
     volumes:
       - /srv/qsh/unifi-controller/config:/config
