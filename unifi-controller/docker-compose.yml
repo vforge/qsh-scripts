@@ -1,0 +1,30 @@
+version: '3'
+
+networks:
+  proxy:
+    external: true
+
+services:
+  unifi-controller:
+    container_name: unifi-controller
+    image: linuxserver/unifi-controller
+    restart: unless-stopped
+    networks:
+      - proxy
+    environment:
+      - PUID=1002
+      - PGID=998
+      - TZ=America/Los_Angeles
+      - UMASK_SET=022
+      - MEM_LIMIT=1024M #optional
+    ports:
+      - 3478:3478/udp
+      - 10001:10001/udp
+      - 8080:8080
+      - 8081:8081
+      - 8443:8443
+      - 8843:8843
+      - 8880:8880
+      - 6789:6789
+    volumes:
+      - /srv/qsh/unifi-controller/config:/config
