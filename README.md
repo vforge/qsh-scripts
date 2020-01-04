@@ -86,6 +86,12 @@ $> docker volume prune
 $> sudo mount -t nfs -o nfsvers=3 192.168.29.100:/volume1/Vault /vault -vvvv
 ```
 
+When `docker-compose pull` hangs try:
+
+```bash
+$> docker-compose --verbose pull --no-parallel
+```
+
 ### TODO
 
 * <https://hub.docker.com/r/linuxserver/lychee/>
