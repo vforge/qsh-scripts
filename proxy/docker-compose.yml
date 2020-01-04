@@ -41,4 +41,4 @@ services:
       MYSQL_USER: 'npm'
       MYSQL_PASSWORD: 'npm'
     volumes:
-      - ./data/mysql:/var/lib/mysql
+      - ./srv/qsh/nginx-proxy-manager/mysql:/var/lib/mysql
