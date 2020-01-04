@@ -28,3 +28,4 @@ services:
       - /storage/__Unsorted__:/completed:z
       - /storage/TV:/tv:z
       - /storage/Anime:/anime:z
+      - /storage/AnimeX:/animex:z

@@ -27,3 +27,4 @@ services:
       - /storage/Movies:/movies:z
       - /storage/TV:/tv:z
       - /storage/Anime:/anime:z
+      - /storage/AnimeX:/animex:z
